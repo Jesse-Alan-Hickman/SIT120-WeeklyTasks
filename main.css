@@ -1,4 +1,17 @@
 body {
-    background-color: rgb(158, 231, 255);
+    border: 5px solid rgb(0, 0, 0);
+}
+
+.title {
+    color: brown;
     font-family: Arial;
+}
+
+#Paragraph1 {
+    color: blueviolet;
+
+}
+
+#Paragraph2 {
+    color: rgb(7, 145, 18);
 }
