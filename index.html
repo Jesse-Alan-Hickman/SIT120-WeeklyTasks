@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <!-- Linking main.css -->
     <link href="main.css" rel = "stylesheet" type = "text/css"/>
+    <!-- Vue Import-->
+    <script src="https://unpkg.com/vue@3"></script>
 
     <style>
         body {
@@ -14,14 +16,13 @@
         .title {
             padding: 15px;
         } 
-        </style>
+    </style>
 
     <!-- Title of webpage -->
     <title>Week 1 Practical</title>
 </head>
 
 <body>
-
     <!-- Headings example -->
     <h1 class="title">Heading Examples Below! &#128516;</h1>
 
@@ -57,8 +58,33 @@
     <button onclick="getDate()">Get Today's Date</button>
     <p id="date"></p>
 
-    <!-- Linking script.js -->
+    <!-- To Do List-->
+    <script>
+    new Vue({
+        el: '#app',
+        data:   {
+            todos:  [
+                {title: 'Assignement 1', checked: true},
+            ],
+        },
+    });
+    </script>
+  
+      <!-- Checking data -->
+  <div id="app">
+      <div  v-for="todo in todos" 
+            :key="todo.title" 
+            :style="{ textDecoration: todo.checked? 'line-through':'none' }"
+            >
+            {{todo.title}}
+
+            <input type="checkbox" v-model="todo.checked" />
+      </div>
+  </div>
+
+    <!-- Linking js file -->
     <script src="./script.js"></script>
+    
 </body>
 
 </html>
