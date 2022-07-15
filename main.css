@@ -1,5 +1,7 @@
 body {
     border: 5px solid rgb(0, 0, 0);
+    column-width: 21em;
+    column-rule: 1px solid rgb(75, 70, 74);
 }
 
 .title {
