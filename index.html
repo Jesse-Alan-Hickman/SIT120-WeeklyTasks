@@ -6,8 +6,13 @@
     <meta charset="UTF-8">
     <!-- Linking main.css -->
     <link href="main.css" rel = "stylesheet" type = "text/css"/>
+    <!-- Linking js file -->
+    <script src="./script.js"></script>
     <!-- Vue Import-->
-    <script src="https://unpkg.com/vue@3"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+<script src="https://unpkg.com/@chenfengyuan/vue-qrcode@1.0.1/dist/vue-qrcode.min.js"></script>
+<script>Vue.component(VueQrcode.name, VueQrcode);</script>
 
     <style>
         body {
@@ -15,7 +20,10 @@
         }
         .title {
             padding: 15px;
-        } 
+        }
+        #toDoTitle {
+            padding-top: 50px;
+        }
     </style>
 
     <!-- Title of webpage -->
@@ -57,34 +65,34 @@
     <!-- Get date button-->
     <button onclick="getDate()">Get Today's Date</button>
     <p id="date"></p>
-
-    <!-- To Do List-->
-    <script>
-    new Vue({
-        el: '#app',
-        data:   {
-            todos:  [
-                {title: 'Assignement 1', checked: true},
-            ],
-        },
-    });
-    </script>
   
-      <!-- Checking data -->
+      <!-- To Do List -->
+
+    <!-- To do list title-->
+    <h2 id="toDoTitle">To Do List:</h2>
+
   <div id="app">
       <div  v-for="todo in todos" 
             :key="todo.title" 
             :style="{ textDecoration: todo.checked? 'line-through':'none' }"
             >
-            {{todo.title}}
-
             <input type="checkbox" v-model="todo.checked" />
+            {{ todo.title }}
       </div>
   </div>
 
-    <!-- Linking js file -->
-    <script src="./script.js"></script>
-    
+    <script>
+        let vue = new Vue({
+            el: '#app',
+            data:   {
+                todos:  [
+                    {title: 'Mow the lawn', checked: true},
+                    {title: 'Buy groceries', checked: true},
+                    {title: 'Clean the car', checked: false},
+                ]
+            }
+        });
+    </script>
 </body>
 
 </html>
