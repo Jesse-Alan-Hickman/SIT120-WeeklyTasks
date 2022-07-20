@@ -1,0 +1,21 @@
+body {
+    border: 5px solid rgb(0, 0, 0);
+    columns: 150px 2;
+    column-rule: 1px solid rgb(75, 70, 74);
+}
+
+/*
+.title {
+    color: brown;
+    font-family: Arial;
+}
+
+#Paragraph1 {
+    color: blueviolet;
+
+}
+
+#Paragraph2 {
+    color: rgb(7, 145, 18);
+}
+*/
