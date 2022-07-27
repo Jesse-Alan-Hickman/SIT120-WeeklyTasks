@@ -24,6 +24,7 @@
     font-size: larger;
     text-align: center;
     border-right: 2px solid rgb(17, 153, 168);
+    border-top: 4px solid rgb(17, 153, 168);
     }
 }
 
@@ -37,6 +38,21 @@
     font-size: larger;
     text-align: center;
     border-left: 2px solid rgb(17, 153, 168);
+    border-top: 4px solid rgb(17, 153, 168);
+    }
+}
+
+/* Paragraph 1 Between 480px and 1300px */
+@media screen and (min-width: 480px) and (max-width: 1300px) {
+    #paragraph1 {
+    float: left;
+    width: 100%;
+    font-weight: bolder;
+    font-size: larger;
+    text-align: left;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
     }
 }
 
@@ -50,6 +66,7 @@
     font-size: x-large;
     text-align: center;
     border-right: 2px solid rgb(17, 153, 168);
+    border-top: 4px solid rgb(17, 153, 168);
     }
 }
 
@@ -63,6 +80,21 @@
     font-size: x-large;
     text-align: center;
     border-left: 2px solid rgb(17, 153, 168);
+    border-top: 4px solid rgb(17, 153, 168);
+    }
+}
+
+/* Paragraph 1 Over 1300px */
+@media screen and (min-width: 1300px) {
+    #paragraph1 {
+    float: leftt;
+    width: 100%;
+    font-weight: bolder;
+    font-size: x-large;
+    text-align: left;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
     }
 }
 
@@ -75,6 +107,7 @@
     font-weight: bolder;
     text-align: center;
     padding-top: 10px;
+    padding-bottom: 20px;
     }
 }
 
@@ -87,6 +120,21 @@
     font-weight: bolder;
     text-align: center;
     padding-top: 10px;
+    border-top: 4px solid rgb(17, 153, 168);
+    }
+}
+
+/* Paragraph 1 Under 480px */
+@media screen and (max-width: 480px) {
+    #paragraph1 {
+    float: left;
+    width: 100%;
+    font-weight: bolder;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
     }
 }
 
