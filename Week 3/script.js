@@ -1,3 +1,5 @@
+//Week 3 Task 1
+
 //Heading
 let task = 'This is Week 3 Task 1 - JavaScript String Methods';
 console.log(task);
@@ -41,12 +43,50 @@ console.log(count);
 console.log(".....Below is an example of charAt().....");
 console.log("The word being used: supercalifragilisticexpialidocious");
 let char = randomWord.charAt(0);
-console.log("character at 0: " + char);
+console.log("Character at 0: " + char);
 char = randomWord.charAt(1);
-console.log("character at 1: " + char);
+console.log("Character at 1: " + char);
 char = randomWord.charAt(2);
-console.log("character at 2: " + char);
+console.log("Character at 2: " + char);
 char = randomWord.charAt(3);
-console.log("character at 3: " + char);
+console.log("Character at 3: " + char);
 char = randomWord.charAt(4);
-console.log("character at 4: " + char);
+console.log("Character at 4: " + char);
+
+//************************************************************************************
+
+//Week 3 Task 2
+
+let cars = ['Holden', 'Ford', 'Nissan', 'Toyota'];
+console.log(cars);
+
+//Find Method
+console.log(cars.find((car) => car === 'Holden'));
+console.log(cars.find((car) => car === 'Mazda'));
+
+//Find Index Method - elements that are not found will return '-1'
+console.log(cars.findIndex((car) => car === 'Toyota'));
+console.log((firstIndex = cars.findIndex((car) => car === 'Mazda')));
+
+//Push Method - adds an element to the end of an array & returns new length of array
+console.log(cars.push('Mazda'));
+console.log(cars);
+
+//Pop Method - removed the last element of an array & returns the removed element
+console.log(cars.pop());
+console.log(cars);
+
+//Sort Method
+let numbers = [7, 3, 5, 8, 9, 5];
+console.log(numbers.sort());
+
+//Slice Method - cuts out part of the array 
+console.log(cars.slice(1,2));
+console.log(cars);
+
+//Slice Method - one parameter will cut out the rest of the array
+console.log(cars.slice(1));
+console.log(cars.slice(-1));
+
+//Foreach Method
+cars.forEach((car) => console.log(car));
