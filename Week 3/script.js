@@ -1,7 +1,7 @@
 //Week 3 Task 1
 
 //Heading
-let task = 'This is Week 3 Task 1 - JavaScript String Methods';
+let task = '*****This is Week 3 Task 1 - JavaScript String Methods*****';
 console.log(task);
 
 //JavaScript String Length
@@ -57,7 +57,7 @@ console.log("Character at 4: " + char);
 
 //Week 3 Task 2
 
-let task2 = 'This is Week 3 Task 2 - JavaScript Numberm Number Methods and Array Methods';
+let task2 = '*****This is Week 3 Task 2 - JavaScript Number, Number Methods and Array Methods*****';
 console.log(task2);
 
 //Creation of string array
@@ -130,5 +130,49 @@ let z = 7.49;
 console.log('It costs exactly $' + z + ' for a 2L carton of milk.');
 console.log('Paying with cash, the cost is rounded up to $' + z.toFixed(1));
 
+//************************************************************************************
 
+//Week 3 Task 3
 
+let task3 = '*****This is Week 3 Task 3 - JavaScript Date API*****';
+console.log(task3);
+
+//New Date Method
+console.log('.....Below is an example of the new date Method.....');
+const todayDate = new Date();
+console.log('Right now it is: ' + todayDate);
+
+//toDateString Method
+console.log('.....Below is an example of the toDateString Method.....');
+console.log('Conversion to a more readable date: ' + todayDate.toDateString());
+
+//toUTCString Method
+console.log('.....Below is an example of the toUTCString Method.....');
+console.log('UTC Standard date: ' + todayDate.toUTCString());
+
+//toISOString Method
+console.log('.....Below is an example of the toISOString Method.....');
+console.log('ISO Standard date: ' + todayDate.toISOString());
+
+//GetDate Method
+console.log('.....Below is an example of the getDate Method.....');
+console.log('The day of the month is: ' + todayDate.getDate());
+
+//GetMonth
+console.log('.....Below is an example of the getMonth Method.....');
+month = todayDate.getMonth();
+//Determining month based on number retuned from getMonth Method
+switch (month) {
+    case 0: console.log('The month of the year is: January'); break;
+    case 1: console.log('The month of the year is: February'); break;
+    case 2: console.log('The month of the year is: March'); break;
+    case 3: console.log('The month of the year is: April'); break;
+    case 4: console.log('The month of the year is: May'); break;
+    case 5: console.log('The month of the year is: June'); break;
+    case 6: console.log('The month of the year is: July'); break;
+    case 7: console.log('The month of the year is: August'); break;
+    case 8: console.log('The month of the year is: September'); break;
+    case 9: console.log('The month of the year is: October'); break;
+    case 10: console.log('The month of the year is: November'); break;
+    case 11: console.log('The month of the year is: December'); break;
+};
