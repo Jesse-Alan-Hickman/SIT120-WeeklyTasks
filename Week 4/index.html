@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character set -->
+    <meta charset="UTF-8">
+    <!-- Linking main.css -->
+    <link href="main.css" rel = "stylesheet" type = "text/css"/>
+    <!-- Linking js file -->
+    <script src="./script.js"></script>
+    <!-- Vue Import-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background-color: rgb(255, 255, 244);
+        h1 {
+            font-weight: 800;
+            padding-bottom: 20px;
+            border-bottom-style: dashed;
+            color: black;
+        }
+        p {
+            font-size: 100px;
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            color:rgb(0, 206, 21);
+            text-align: center;
+
+        }
+
+    </style>
+
+    <!-- Title of webpage -->
+    <title>Week 4 Practical</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1> {{ title }}</h1>
+        <p> {{ message }} </p>
+    </div> 
+</body>
+
+</html>
+
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {     
+            title: 'Week 4 Practical: Vue.js Framework ',
+            message: 'Hello World!'
+        },
+    });
+</script>
