@@ -16,20 +16,45 @@
     <style>
         body {
             background-color: rgb(255, 255, 244);
-        h1 {
+        }
+
+        #task1Heading {
             font-weight: 800;
             padding-bottom: 20px;
             border-bottom-style: dashed;
             color: black;
+            text-align: center;
         }
-        p {
-            font-size: 100px;
+
+        #task2Heading {
+            font-weight: 800;
+            color: black;
+            text-align: center;
+        }
+        
+        #helloWorld {
+            font-size: 150px;
             font-family: 'Arial Narrow', Arial, sans-serif;
             color:rgb(0, 206, 21);
             text-align: center;
-
+            padding-bottom: 70px;
         }
 
+        #vforContent{
+            font-size: larger;
+        }
+
+        #studentButton{
+            padding: 15px;
+            border-color: green;
+            background-color: rgb(169, 255, 226);
+            font-size: larger;
+            font-weight: 600;
+        }
+        
+        #task2{
+            text-align: center;
+        }
     </style>
 
     <!-- Title of webpage -->
@@ -37,20 +62,60 @@
 </head>
 
 <body>
-    <div id="app">
-        <h1> {{ title }}</h1>
-        <p> {{ message }} </p>
+    <div id="task1">
+        <h1 id="task1Heading"> {{ title }} </h1>
+        <p id="helloWorld"> {{ message }} </p>
     </div> 
+
+    <div id="task2">
+        
+        <h1 id="task2Heading"> {{ title }} </h1>
+
+        <button id="studentButton" v-on:click="infoOn = !infoOn">PRESS TO TOGGLE STUDENT INFORMATION</button>
+        
+        <br>
+        <br>
+        <br>
+
+        <div v-for="student in students" style="padding:20px; border-top:1px solid rgb(0, 0, 0); border-radius: 5%;"> Student {{ student.id }}
+            <div v-show="infoOn" >
+                <p v-if="student.male" >Name: {{ student.name }} <br> Sex: Male <br> Age: {{ student.age }}</p>
+                <p v-else>Name: {{ student.name }} <br> Sex: Female <br> Age: {{ student.age }}</p> 
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
 
 <script>
-    let app = new Vue({
-        el: '#app',
+    let task1 = new Vue({
+        el: '#task1',
         data: {     
-            title: 'Week 4 Practical: Vue.js Framework ',
-            message: 'Hello World!'
+            title: 'Week 4 Practical: Task 1',
+            message: 'Hello World!',
+        },
+    });
+
+    let task2 = new Vue({
+        el: '#task2',
+        data: {     
+            title: 'Week 4 Practical: Task 2',
+            message: 'Hello World!',
+            infoOn: true,
+            students: [
+                {id: 1, name: 'Jonothan', age: 10, male: true},
+                {id: 2, name: 'Greg',age: 5, male: true},
+                {id: 3, name: 'Rebecca', age: 7, male: false},
+                {id: 4, name: 'Mark', age: 6, male: true},
+                {id: 5, name: 'Lilly', age: 12, male: false},
+                {id: 6, name: 'Tahlia', age: 9, male: false},
+                {id: 7, name: 'Jack', age: 11, male: true},
+                {id: 8, name: 'Georgina', age: 8, male: false},
+                {id: 9, name: 'Jacqueline', age: 5, male: false},
+                {id: 10, name: 'Thomas', age: 10, male: true},
+            ],
         },
     });
 </script>
