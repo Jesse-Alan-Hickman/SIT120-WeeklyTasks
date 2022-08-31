@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character set -->
+    <meta charset="UTF-8">
+    <!-- Linking main.css -->
+    <link href="main.css" rel = "stylesheet" type = "text/css"/>
+    <!-- Linking js file -->
+    <script src="./script.js"></script>
+    <!-- Vue Import-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background-color: rgb(235, 254, 255);
+        }
+
+        .taskHeading {
+            font-weight: 800;
+            padding-bottom: 20px;
+            border-bottom-style: dashed;
+            color: black;
+            text-align: center;
+        }
+        
+        #task2{
+            text-align: center;
+        }
+    </style>
+
+    <!-- Title of webpage -->
+    <title>Week 7 Practical</title>
+</head>
+
+    <body>
+        <div id="task1">
+            <h1 class="taskHeading"> {{ title }} </h1>
+            <component1 @random="random"></component1>
+            <p>Random Number: {{ count }}</p>
+        </div> 
+
+        <div id="app">
+            <comp2></comp2>
+        </div>
+
+        <div id="task2">
+            <h1 class="taskHeading"> {{ title }} </h1>
+        </div>
+    </body>
+</html>
+
+<script type="text/x-template" id="component1">
+    <div>
+        <button @click="randomEmit">Generate Random Number</button>
+    </div>
+</script>
+
+<script>
+    var component1 = {
+        template: '#component1',
+        methods: {
+            randomEmit: function () {
+                this.$emit('random');
+            },
+        },
+    };
+
+    let task1 = new Vue({
+        el: '#task1',
+        data: {     
+            title: 'Week 7 Practical: Task 1',
+            count: 0,
+        },
+        methods: {
+            random: function () {
+                this.count = Math.random();
+            },
+        },
+        components: {
+            component1,
+        },
+    });
+
+    let task2 = new Vue({
+        el: '#task2',
+        data: {     
+            title: 'Week 7 Practical: Task 2'
+        },
+    });
+</script>
