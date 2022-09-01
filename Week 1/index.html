@@ -1,98 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Character set -->
-    <meta charset="UTF-8">
-    <!-- Linking main.css -->
-    <link href="main.css" rel = "stylesheet" type = "text/css"/>
-    <!-- Linking js file -->
-    <script src="./script.js"></script>
-    <!-- Vue Import-->
+    <head>
+        <!-- Character set -->
+        <meta charset="UTF-8">
+        <!-- Linking main.css -->
+        <link href="main.css" rel = "stylesheet" type = "text/css"/>
+        <!-- Linking js file -->
+        <script src="./script.js"></script>
+        <!-- Vue Import-->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
-<script src="https://unpkg.com/@chenfengyuan/vue-qrcode@1.0.1/dist/vue-qrcode.min.js"></script>
-<script>Vue.component(VueQrcode.name, VueQrcode);</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+        <script src="https://unpkg.com/@chenfengyuan/vue-qrcode@1.0.1/dist/vue-qrcode.min.js"></script>
+        <script>Vue.component(VueQrcode.name, VueQrcode);</script>
 
-    <style>
-        body {
-            background-color: rgb(190, 190, 200);
-        }
-        .title {
-            padding: 15px;
-        }
-        #toDoTitle {
-            padding-top: 50px;
-        }
-    </style>
-
-    <!-- Title of webpage -->
-    <title>Week 1 Practical</title>
-</head>
-
-<body>
-    <!-- Headings example -->
-    <h1 class="title">Heading Examples Below! &#128516;</h1>
-
-<div id="Headings">
-    <h1>This is a heading 1</h1>
-    <h2>This is a heading 2</h2>
-    <h3>This is a heading 3</h3>
-    <h4>This is a heading 4</h4>
-    <h5>This is a heading 5</h5>
-</div>
-
-    <!-- Paragraph examples title-->
-    <h1 class="title">Paragraph Example below! &#128522;</h1>
-
-    <!-- Paragraph 1 example -->
-<div id="Paragraph1">
-    <p><b>This is my first paragraph. The colour is blue-violet.</b></p>
-</div>
-
-    <!-- Paragraph 2 example -->
-<div id="Paragraph2">
-    <p><b>This is my second paragraph.</b> The image below shows a musician playing an acoustic guitar. &#127928;</p>
-</div>
-
-    <!-- Image insert -->
-    <img src="./Guitar1.jpg" width="300" height="200" alt="Acoustic Guitarist" />
-
-
-    <!-- Paragraph examples title-->
-    <h1 class="title">Onclick Date Button! &#128523;</h1>
-
-    <!-- Get date button-->
-    <button onclick="getDate()">Get Today's Date</button>
-    <p id="date"></p>
-  
-      <!-- To Do List -->
-
-    <!-- To do list title-->
-    <h2 id="toDoTitle">To Do List:</h2>
-
-  <div id="app">
-      <div  v-for="todo in todos" 
-            :key="todo.title" 
-            :style="{ textDecoration: todo.checked? 'line-through':'none' }"
-            >
-            <input type="checkbox" v-model="todo.checked" />
-            {{ todo.title }}
-      </div>
-  </div>
-
-    <script>
-        let vue = new Vue({
-            el: '#app',
-            data:   {
-                todos:  [
-                    {title: 'Mow the lawn', checked: true},
-                    {title: 'Buy groceries', checked: true},
-                    {title: 'Clean the car', checked: false},
-                ]
+        <!-- Internal CSS -->
+        <style>
+            body {
+                background-color: rgb(190, 190, 200);
             }
-        });
-    </script>
-</body>
+            .title {
+                padding: 15px;
+            }
+            #toDoTitle {
+                padding-top: 50px;
+            }
+        </style>
 
+        <!-- Title tag to give webpage a title -->
+        <title>Week 1 Practical</title>
+    </head>
+
+    <body>
+        <!-- Heading examples heading -->
+        <h1 class="title">Heading Examples Below! &#128516;</h1>
+
+        <!-- H1, H2, H3, H4, and H5 tags used to display different heading possibilities -->
+        <div id="Headings">
+            <h1>This is a heading 1</h1>
+            <h2>This is a heading 2</h2>
+            <h3>This is a heading 3</h3>
+            <h4>This is a heading 4</h4>
+            <h5>This is a heading 5</h5>
+        </div>
+
+        <!-- Paragraph examples heading -->
+        <h1 class="title">Paragraph Example below! &#128522;</h1>
+
+        <!-- P tag used to create a paragraph -->
+        <p id="Paragraph1"><b>This is my first paragraph. The colour is blue-violet.</b></p>
+
+        <!-- Second P tag example -->
+        <p id="Paragraph2"><b>This is my second paragraph.</b> The image below shows a musician playing an acoustic guitar. &#127928;</p>
+        
+        <!-- Img tag used to input image, including inline CSS to alter image size -->
+        <img src="./Guitar1.jpg" width="300" height="200" alt="Acoustic Guitarist" />
+
+        <!-- Date Button heading -->
+        <h1 class="title">Onclick Date Button! &#128523;</h1>
+
+        <!-- Button tag used to create a button that retrieves today's date -->
+        <button onclick="getDate()">Get Today's Date</button>
+        <p id="date"></p>
+    
+        <!-- To Do List for task 5-->
+        <!-- To Do List heading -->
+        <h2 id="toDoTitle">To Do List:</h2>
+
+        <!-- Div identified for app -->
+        <div id="app">
+            <div  
+                v-for="todo in todos" 
+                :key="todo.title" 
+                :style="{ textDecoration: todo.checked? 'line-through':'none' }">
+                <input type="checkbox" v-model="todo.checked"/>
+                {{ todo.title }}
+            </div>
+        </div>
+
+        <script>
+            //Creation of Vue app
+            let vue = new Vue({
+                el: '#app',
+                data:   {
+                    todos:  [
+                        {title: 'Mow the lawn', checked: true},
+                        {title: 'Buy groceries', checked: true},
+                        {title: 'Clean the car', checked: false},
+                    ]
+                }
+            });
+        </script>
+    </body>
 </html>
