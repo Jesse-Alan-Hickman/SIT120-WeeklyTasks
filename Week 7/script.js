@@ -1,7 +1,8 @@
-Vue.component('comp2', {
-    template: '<button>Custom Button</button>'
-})
-
-let app = new Vue({
-    el: '#app',
+Vue.component('global-comp', {
+    template: '<div>{{ message }}</div>',
+    data: function () {
+        return {
+            message: 'This text is written using a global component!'
+        }
+    }
 })
