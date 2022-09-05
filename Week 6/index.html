@@ -1,128 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Character set -->
-    <meta charset="UTF-8">
-    <!-- Linking main.css -->
-    <link href="main.css" rel = "stylesheet" type = "text/css"/>
-    <!-- Linking js file -->
-    <script src="./script.js"></script>
-    <!-- Vue Import-->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <!-- Character set -->
+        <meta charset="UTF-8">
+        <!-- Linking main.css -->
+        <link href="main.css" rel = "stylesheet" type = "text/css"/>
+        <!-- Linking js file -->
+        <script src="./script.js"></script>
+        <!-- Vue Import-->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+        <!-- Viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            background-color: rgb(235, 254, 255);
-        }
+        <style>
+            body {
+                background-color: rgb(235, 254, 255);
+            }
 
-        #task1Heading {
-            font-weight: 800;
-            padding-bottom: 20px;
-            border-bottom-style: dashed;
-            color: black;
-            text-align: center;
-        }
+            #task1Heading {
+                font-weight: 800;
+                padding-bottom: 20px;
+                border-bottom-style: dashed;
+                color: black;
+                text-align: center;
+            }
 
-        .inputBox {
-            background-color: rgb(255, 255, 255);
-            width: 200px;
-            height: 20px;
-        }
+            .inputBox {
+                background-color: rgb(255, 255, 255);
+                width: 200px;
+                height: 20px;
+            }
 
-        .prompts {
-            font-size: larger;
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        }
+            .prompts {
+                font-size: larger;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
 
-        #task2Heading {
-            font-weight: 800;
-            color: black;
-            text-align: center;
-        }
+            #task2Heading {
+                font-weight: 800;
+                color: black;
+                text-align: center;
+            }
 
-        #vforContent{
-            font-size: larger;
-        }
+            #vforContent{
+                font-size: larger;
+            }
 
-        #studentButton{
-            padding: 15px;
-            border-color: green;
-            background-color: rgb(169, 255, 226);
-            font-size: larger;
-            font-weight: 600;
-        }
-        
-        #task2{
-            text-align: center;
-        }
-    </style>
+            #studentButton{
+                padding: 15px;
+                border-color: green;
+                background-color: rgb(169, 255, 226);
+                font-size: larger;
+                font-weight: 600;
+            }
+            
+            #task2{
+                text-align: center;
+            }
+        </style>
 
-    <!-- Title of webpage -->
-    <title>Week 6 Practical</title>
-</head>
+        <!-- Title of webpage -->
+        <title>Week 6 Practical</title>
+    </head>
 
-<body>
-    <div id="task1">
-        <h1 id="task1Heading"> {{ title }} </h1>
-        <h2><u>Create Account</u></h2>
-        <p class="prompts">Username</p>
-        <input class="inputBox" v-model="username" type="text" placeholder="Please enter your username" />
-        <p class="prompts">Password</p>
-        <input class="inputBox" v-model="password" type="text" placeholder="Please enter a new password" />
-        
+    <body>
+        <div id="task1">
+            <h1 id="task1Heading"> {{ heading }} </h1>
+            <h2><u>Create Account</u></h2>
+            <p class="prompts">Username</p>
+            <input class="inputBox" v-model="username" type="text" placeholder="Please enter your username" />
+            <p class="prompts">Password</p>
+            <input class="inputBox" v-model="password" type="text" placeholder="Please enter a new password" />
+            
 
 
-        <br> <br> <br>
-        <p><b>Proof of v-model concept:</b></p>
-        <p>Username: {{ username }}</p>
-        <p>Password: {{ password }}</p>
-    </div> 
-
-    <div id="task2">
-        <h1 id="task2Heading"> {{ title }} </h1>
-        <button id="studentButton" v-on:click="infoOn = !infoOn">PRESS TO TOGGLE STUDENT INFORMATION</button>
-
-        <div v-for="student in students" style="padding:20px; border-top:1px solid rgb(0, 0, 0); border-radius: 5%;"> Student {{ student.id }}
-            <div v-show="infoOn" >
-                <p v-if="student.male" >Name: {{ student.name }} <br> Sex: Male <br> Age: {{ student.age }}</p>
-                <p v-else>Name: {{ student.name }} <br> Sex: Female <br> Age: {{ student.age }}</p> 
-            </div>
-        </div>
-    </div>
-</body>
+            <br> <br> <br>
+            <p><b>Proof of v-model concept:</b></p>
+            <p>Username: {{ username }}</p>
+            <p>Password: {{ password }}</p>
+        </div> 
+    </body>
 </html>
 
 <script>
     let task1 = new Vue({
         el: '#task1',
         data: {     
-            title: 'Week 6 Practical: Task 1',
+            heading: 'Week 6 Practical: Task 1',
             username: '',
             password: ''
-        },
-    });
-
-    let task2 = new Vue({
-        el: '#task2',
-        data: {     
-            title: 'Week 6 Practical: Task 2',
-            message: 'Hello World!',
-            infoOn: true,
-            students: [
-                {id: 1, name: 'Jonothan', age: 10, male: true},
-                {id: 2, name: 'Greg',age: 5, male: true},
-                {id: 3, name: 'Rebecca', age: 7, male: false},
-                {id: 4, name: 'Mark', age: 6, male: true},
-                {id: 5, name: 'Lilly', age: 12, male: false},
-                {id: 6, name: 'Tahlia', age: 9, male: false},
-                {id: 7, name: 'Jack', age: 11, male: true},
-                {id: 8, name: 'Georgina', age: 8, male: false},
-                {id: 9, name: 'Jacqueline', age: 5, male: false},
-                {id: 10, name: 'Thomas', age: 10, male: true},
-            ],
         },
     });
 </script>
