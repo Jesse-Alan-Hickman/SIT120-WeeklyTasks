@@ -1,99 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+   
+    <head>
+        <!-- Character set -->
+        <meta charset="UTF-8">
+        <!-- Vue Import-->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+        <!-- Viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <!-- Character set -->
-    <meta charset="UTF-8">
-    <!-- Linking main.css -->
-    <link href="main.css" rel = "stylesheet" type = "text/css"/>
-    <!-- Linking js file -->
-    <script src="./script.js"></script>
-    <!-- Vue Import-->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: rgb(255, 255, 244);
+            }
 
-    <style>
-        body {
-            background-color: rgb(255, 255, 244);
-        }
+            #task1Heading {
+                font-weight: 800;
+                padding-bottom: 20px;
+                border-bottom-style: dashed;
+                color: black;
+                text-align: center;
+            }
 
-        #task1Heading {
-            font-weight: 800;
-            padding-bottom: 20px;
-            border-bottom-style: dashed;
-            color: black;
-            text-align: center;
-        }
+            #task2Heading {
+                font-weight: 800;
+                color: black;
+                text-align: center;
+            }
+            
+            #helloWorld {
+                font-size: 150px;
+                font-family: 'Arial Narrow', Arial, sans-serif;
+                color:rgb(0, 206, 21);
+                text-align: center;
+                padding-bottom: 70px;
+            }
 
-        #task2Heading {
-            font-weight: 800;
-            color: black;
-            text-align: center;
-        }
-        
-        #helloWorld {
-            font-size: 150px;
-            font-family: 'Arial Narrow', Arial, sans-serif;
-            color:rgb(0, 206, 21);
-            text-align: center;
-            padding-bottom: 70px;
-        }
+            #vforContent{
+                font-size: larger;
+            }
 
-        #vforContent{
-            font-size: larger;
-        }
+            #studentButton{
+                padding: 15px;
+                border-color: green;
+                background-color: rgb(169, 255, 226);
+                font-size: larger;
+                font-weight: 600;
+            }
+            
+            #task2{
+                text-align: center;
+            }
+        </style>
 
-        #studentButton{
-            padding: 15px;
-            border-color: green;
-            background-color: rgb(169, 255, 226);
-            font-size: larger;
-            font-weight: 600;
-        }
-        
-        #task2{
-            text-align: center;
-        }
-    </style>
+        <!-- Title of webpage -->
+        <title>Week 4 Practical</title>
+    </head>
 
-    <!-- Title of webpage -->
-    <title>Week 4 Practical</title>
-</head>
+    <body>
+        <div id="task1">
+            <h1 id="task1Heading"> {{ heading }} </h1>
+            <p id="helloWorld"> {{ message }} </p>
+        </div> 
 
-<body>
-    <div id="task1">
-        <h1 id="task1Heading"> {{ title }} </h1>
-        <p id="helloWorld"> {{ message }} </p>
-    </div> 
+        <div id="task2">
+            
+            <h1 id="task2Heading"> {{ heading }} </h1>
 
-    <div id="task2">
-        
-        <h1 id="task2Heading"> {{ title }} </h1>
+            <button id="studentButton" v-on:click="infoOn = !infoOn">PRESS TO TOGGLE STUDENT INFORMATION</button>
+            
+            <br>
+            <br>
+            <br>
 
-        <button id="studentButton" v-on:click="infoOn = !infoOn">PRESS TO TOGGLE STUDENT INFORMATION</button>
-        
-        <br>
-        <br>
-        <br>
-
-        <div v-for="student in students" style="padding:20px; border-top:1px solid rgb(0, 0, 0); border-radius: 5%;"> Student {{ student.id }}
-            <div v-show="infoOn" >
-                <p v-if="student.male" >Name: {{ student.name }} <br> Sex: Male <br> Age: {{ student.age }}</p>
-                <p v-else>Name: {{ student.name }} <br> Sex: Female <br> Age: {{ student.age }}</p> 
+            <div v-for="student in students" style="padding:20px; border-top:1px solid rgb(0, 0, 0); border-radius: 5%;"> Student {{ student.id }}
+                <div v-show="infoOn" >
+                    <p v-if="student.male" >Name: {{ student.name }} <br> Sex: Male <br> Age: {{ student.age }}</p>
+                    <p v-else>Name: {{ student.name }} <br> Sex: Female <br> Age: {{ student.age }}</p> 
+                </div>
             </div>
         </div>
-    </div>
-
-</body>
-
+    </body>
 </html>
 
 <script>
     let task1 = new Vue({
         el: '#task1',
         data: {     
-            title: 'Week 4 Practical: Task 1',
+            heading: 'Week 4 Practical: Task 1',
             message: 'Hello World!',
         },
     });
@@ -101,7 +95,7 @@
     let task2 = new Vue({
         el: '#task2',
         data: {     
-            title: 'Week 4 Practical: Task 2',
+            heading: 'Week 4 Practical: Task 2',
             message: 'Hello World!',
             infoOn: true,
             students: [
