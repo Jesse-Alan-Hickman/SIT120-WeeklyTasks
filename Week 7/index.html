@@ -17,7 +17,7 @@
 
     <body>
         <div id="task1">
-            <h1 class="taskHeading"> {{ title }} </h1>
+            <h1 class="taskHeading"> {{ heading }} </h1>
             <component1 @random="random"></component1>
             <p>Random Number: {{ count }}</p>
         </div> 
@@ -27,7 +27,7 @@
         </div>
 
         <div id="task2">
-            <h1 class="taskHeading"> {{ title }} </h1>
+            <h1 class="taskHeading"> {{ heading }} </h1>
         </div>
 
         <script type="text/x-template" id="component1">
@@ -49,7 +49,7 @@
             let task1 = new Vue({
                 el: '#task1',
                 data: {     
-                    title: 'Week 7 Practical: Task 1',
+                    heading: 'Week 7 Practical: Task 1',
                     count: 0,
                 },
                 methods: {
@@ -65,7 +65,7 @@
             let task2 = new Vue({
                 el: '#task2',
                 data: {     
-                    title: 'Week 7 Practical: Task 2'
+                    heading: 'Week 7 Practical: Task 2'
                 },
             });
 

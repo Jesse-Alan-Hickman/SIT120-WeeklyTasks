@@ -1,8 +1,8 @@
 Vue.component('global-comp', {
-    template: '<div>{{ message }}</div>',
+    template: '<button>{{ message }}</button>',
     data: function () {
         return {
-            message: 'This text is written using a global component!'
+            message: 'This button was created using a global component!'
         }
     }
 })
