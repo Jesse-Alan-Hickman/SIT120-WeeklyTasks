@@ -18,14 +18,6 @@
                 background-color: rgb(235, 254, 255);
             }
 
-            #task1Heading {
-                font-weight: 800;
-                padding-bottom: 20px;
-                border-bottom-style: dashed;
-                color: black;
-                text-align: center;
-            }
-
             .inputBox {
                 background-color: rgb(255, 255, 255);
                 width: 200px;
@@ -37,10 +29,17 @@
                 font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             }
 
-            #task2Heading {
+            .taskHeading {
                 font-weight: 800;
+                padding: 20px;
+                border-bottom-style: dashed;
+                border-top-style: dashed;
                 color: black;
                 text-align: center;
+            }
+
+            #bread {
+                text-align: left;
             }
 
             #vforContent{
@@ -54,10 +53,6 @@
                 font-size: larger;
                 font-weight: 600;
             }
-            
-            #task2{
-                text-align: center;
-            }
         </style>
 
         <!-- Title of webpage -->
@@ -66,19 +61,58 @@
 
     <body>
         <div id="task1">
-            <h1 id="task1Heading"> {{ heading }} </h1>
+            <h1 class="taskHeading"> {{ heading }} </h1>
             <h2><u>Create Account</u></h2>
             <p class="prompts">Username</p>
             <input class="inputBox" v-model="username" type="text" placeholder="Please enter your username" />
             <p class="prompts">Password</p>
             <input class="inputBox" v-model="password" type="text" placeholder="Please enter a new password" />
             
-
-
             <br> <br> <br>
             <p><b>Proof of v-model concept:</b></p>
             <p>Username: {{ username }}</p>
             <p>Password: {{ password }}</p>
+        </div> 
+
+        <div id="task2">
+            <h1 class="taskHeading"> {{ heading }} </h1>
+
+            <h2>Do you know the colours of the rainbow?</h2>
+            <input type="checkbox" v-on:click="redCheck = !redCheck" id="Red" value="Red" v-model="checkedItems"/>
+            <label for="bread">Red</label>
+            <br>
+            <input type="checkbox" v-on:click="orangeCheck = !orangeCheck" id="Orange" value="Orange" v-model="checkedItems"/>
+            <label for="bread">Orange</label>
+            <br>
+            <input type="checkbox" v-on:click="yellowCheck = !yellowCheck" id="Yellow" value="Yellow" v-model="checkedItems"/>
+            <label for="bread">Yellow</label>
+            <br>
+            <input type="checkbox" v-on:click="greenCheck = !greenCheck" id="Green" value="Green" v-model="checkedItems"/>
+            <label for="bread">Green</label>
+            <br>
+            <input type="checkbox" v-on:click="blueCheck = !blueCheck" id="Blue" value="Blue" v-model="checkedItems"/>
+            <label for="bread">Blue</label>
+            <br>
+            <input type="checkbox" v-on:click="indigoCheck = !indigoCheck" id="Indigo" value="Indigo" v-model="checkedItems"/>
+            <label for="bread">Indigo</label>
+            <br>
+            <input type="checkbox" v-on:click="violetCheck = !violetCheck" id="Violet" value="Violet" v-model="checkedItems"/>
+            <label for="bread">Violet</label>
+
+            <br> <br>
+            <span v-for="checked">Your colours: {{ checkedItems }} </span>
+            <h3 v-if="redCheck && orangeCheck && yellowCheck && greenCheck && blueCheck && indigoCheck && violetCheck">{{ correct }}</h3>
+            <h3 v-else>{{ incorrect }}</h3>
+        </div>
+
+        <div id="task3">
+            <h1 class="taskHeading"> {{ heading }} </h1>
+
+            <select v-model="selected">
+                <option value="" disabled>Select an option</option>
+                <option v-for="n in 4">{{ n }}</option>
+            </select>
+            <span> Selected: {{ selected }}</span>
         </div> 
     </body>
 </html>
@@ -90,6 +124,31 @@
             heading: 'Week 6 Practical: Task 1',
             username: '',
             password: ''
+        },
+    });
+
+    let task2 = new Vue({
+        el: '#task2',
+        data: {     
+            heading: 'Week 6 Practical: Task 2',
+            checkedItems: [],
+            redCheck: false,
+            orangeeCheck: false,
+            yellowCheck: false,
+            greenCheck: false,
+            blueCheck: false,
+            indigoCheck: false,
+            violetCheck: false,
+            correct: 'These are all of the colours of the rainbow!',
+            incorrect: 'These colours are not quite right.'
+        },
+    });
+
+    let task3 = new Vue({
+        el: '#task3',
+        data: {     
+            heading: 'Week 6 Practical: Task 3',
+            selected: '',
         },
     });
 </script>
