@@ -39,37 +39,6 @@
             <p>Random Number: {{ count }}</p>
         </div>
 
-        <div id="task4">
-            <h1 class="taskHeading"> {{ heading }} </h1>
-
-            <component4>
-                <p>Hey there</p>
-            </component4>
-
-            <component4>
-            </component4>
-
-            <component4>
-            </component4>
-
-            <template id="component_template">
-                <style>
-                    .para {
-                        color: green;
-                    }
-                    .error {
-                        color: red;
-                    }
-                </style>
-                <p class="para">Hello World</p>
-                <p class="error">Hello World</p>
-
-
-
-                
-            </template>
-        </div>
-
         <script type="text/x-template" id="component3">
             <div>
                 <button @click="randomEmit">Generate Random Number</button>
@@ -138,29 +107,6 @@
                 },
                 components: {
                     component2,
-                },
-            });
-
-            //task 4 component
-
-            var component4 = {
-                template: '<div> Name: <slot name="username"></slot> </div>',
-            }
-
-            //task 4 app
-            let task4 = new Vue({
-                el: '#task4',
-                data: {     
-                    heading: 'Week 7 Practical: Task 4',
-                },
-                methods: 
-                    function showContent() {
-                    var comp4 = document.getElementsByTagName("component4")[0];
-                    var clone = comp4.content.cloneNode(true);
-                    document.body.appendChild(clone);
-                },
-                components: {
-                    component4,
                 },
             });
         </script>

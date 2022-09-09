@@ -1,13 +1,15 @@
 <template>
-    <my-component></my-component>
+    <div>
+        <my-component></my-component>
+    </div>
 </template>
 
 <script>
-import MyComponent from './components/my-component.vue';
+import mycomponent from './components/my-component.vue';
 
 export default {
     components: {
-    MyComponent
+    'my-component': mycomponent
 },
 }
 </script>

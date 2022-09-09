@@ -12,11 +12,16 @@
     <script src="./App.vue" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
     <script src="https://unpkg.com/@chenfengyuan/vue-qrcode@1.0.1/dist/vue-qrcode.min.js"></script>
-    <script>Vue.component(VueQrcode.name, VueQrcode);</script>
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        .para {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
     </style>
 
     <!-- Title of webpage -->
@@ -24,18 +29,18 @@
 </head>
 
 <body>
+
     <!-- Heading -->
-    <div class="header">
         <h1>Week 4 Task 4 Practical</h1>
 
-        <template>
-            <slot></slot>
-        </template>
-        
         <my-component>
-            <slot></slot>
         </my-component>
-    </div>
+
+        <template>
+            <p class="para">
+                <slot name="info">Hello World</slot>
+            </p>
+        </template>
     
     <script>
     </script>
