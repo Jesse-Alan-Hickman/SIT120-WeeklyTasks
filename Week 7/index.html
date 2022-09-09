@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Character set -->
-    <meta charset="UTF-8">
-    <!-- Linking main.css -->
-    <link href="main.css" rel = "stylesheet" type = "text/css"/>    
-    <!-- Vue Import-->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <!-- Character set -->
+        <meta charset="UTF-8">
+        <!-- Linking main.css -->
+        <link href="main.css" rel = "stylesheet" type = "text/css"/>    
+        <!-- Vue Import-->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+        <!-- Viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Title of webpage -->
-    <title>Week 7 Practical</title>
-</head>
+        <!-- Title of webpage -->
+        <title>Week 7 Practical</title>
+    </head>
 
     <body>
         <div id="task1">
             <h1 class="taskHeading"> {{ heading }} </h1>
-            <component1 @random="random"></component1>
-            <p>Random Number: {{ count }}</p>
+            <component1></component1>
         </div> 
+        <br>
 
         <div id="app">
             <global-comp></global-comp>
@@ -28,17 +28,74 @@
 
         <div id="task2">
             <h1 class="taskHeading"> {{ heading }} </h1>
+        <h2>What car do I own?</h2>
+
+            <component2 :cars="cars"></component2>
         </div>
 
-        <script type="text/x-template" id="component1">
+        <div id="task3">
+            <h1 class="taskHeading"> {{ heading }} </h1>
+            <component3 @random="random"></component3>
+            <p>Random Number: {{ count }}</p>
+        </div>
+
+        <div id="task4">
+            <h1 class="taskHeading"> {{ heading }} </h1>
+
+            <component4>
+                <p>Hey there</p>
+            </component4>
+
+            <component4>
+            </component4>
+
+            <component4>
+            </component4>
+
+            <template id="component_template">
+                <style>
+                    .para {
+                        color: green;
+                    }
+                    .error {
+                        color: red;
+                    }
+                </style>
+                <p class="para">Hello World</p>
+                <p class="error">Hello World</p>
+
+
+
+                
+            </template>
+        </div>
+
+        <script type="text/x-template" id="component3">
             <div>
                 <button @click="randomEmit">Generate Random Number</button>
             </div>
         </script>
 
         <script>
+            //task 1 component
             var component1 = {
-                template: '#component1',
+                template: '<button> This button was created using a local component! </button>',
+                }
+
+            //task 1 app
+            let task1 = new Vue({
+                el: '#task1',
+                data: {     
+                    heading: 'Week 7 Practical: Task 1',
+                },
+                components: {
+                    component1,
+                },
+            });
+
+            //task 3 component
+            var component3 = {
+                template: '#component3',
                 methods: {
                     randomEmit: function () {
                         this.$emit('random');
@@ -46,10 +103,11 @@
                 },
             };
 
-            let task1 = new Vue({
-                el: '#task1',
+            //task 3 app
+            let task3 = new Vue({
+                el: '#task3',
                 data: {     
-                    heading: 'Week 7 Practical: Task 1',
+                    heading: 'Week 7 Practical: Task 3',
                     count: 0,
                 },
                 methods: {
@@ -58,18 +116,54 @@
                     },
                 },
                 components: {
-                    component1,
+                    component3,
                 },
             });
 
+            //task 2 component
+            var component2 = {
+                template: '<div> I own a {{ cars.year }} {{ cars.make }} {{ cars.model}}. </div>',
+                props: ['cars'],
+            };
+
+            //task 2 app
             let task2 = new Vue({
                 el: '#task2',
                 data: {     
-                    heading: 'Week 7 Practical: Task 2'
+                    heading: 'Week 7 Practical: Task 2',
+                    cars: {
+                        year: 1995, make: 'Nissan', model: 'Skyline R33 GTR',
+                    }, 
+                    
+                },
+                components: {
+                    component2,
                 },
             });
 
-        </script> 
+            //task 4 component
+
+            var component4 = {
+                template: '<div> Name: <slot name="username"></slot> </div>',
+            }
+
+            //task 4 app
+            let task4 = new Vue({
+                el: '#task4',
+                data: {     
+                    heading: 'Week 7 Practical: Task 4',
+                },
+                methods: 
+                    function showContent() {
+                    var comp4 = document.getElementsByTagName("component4")[0];
+                    var clone = comp4.content.cloneNode(true);
+                    document.body.appendChild(clone);
+                },
+                components: {
+                    component4,
+                },
+            });
+        </script>
 
         <script src="./script.js"></script>
         <script>
