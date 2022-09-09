@@ -1,50 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <!-- Character set -->
-    <meta charset="UTF-8">
-    <!-- Linking main.css -->
-    <link href="main.css" rel = "stylesheet" type = "text/css"/>
-    <!-- Linking js file -->
-    <script src="./script.js"></script>
-    <!-- Vue Import-->
-    <script src="./App.vue" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
-    <script src="https://unpkg.com/@chenfengyuan/vue-qrcode@1.0.1/dist/vue-qrcode.min.js"></script>
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        .para {
-            color: green;
-        }
-        .error {
-            color: red;
-        }
-    </style>
-
-    <!-- Title of webpage -->
-    <title>Week 7 Task 4 Practical</title>
-</head>
-
-<body>
-
-    <!-- Heading -->
-        <h1>Week 4 Task 4 Practical</h1>
-
-        <my-component>
-        </my-component>
-
-        <template>
-            <p class="para">
-                <slot name="info">Hello World</slot>
-            </p>
-        </template>
-    
-    <script>
-    </script>
-
-</body>
-
+  <head>
+    <meta charset="utf-8">
+    <title>week-7-task-4</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/dist/build.js"></script>
+  </body>
 </html>

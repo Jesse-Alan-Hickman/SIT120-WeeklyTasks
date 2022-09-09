@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1> Hello from my component!</h1>
+        <p> My name is {{ name }}</p>
     </div>
 </template>
 
