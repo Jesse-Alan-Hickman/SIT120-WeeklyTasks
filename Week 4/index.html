@@ -58,11 +58,13 @@
     </head>
 
     <body>
+        <!-- Task 1 div -->
         <div id="task1">
             <h1 id="task1Heading"> {{ heading }} </h1>
             <p id="helloWorld"> {{ message }} </p>
         </div> 
 
+        <!-- Task 2 div -->
         <div id="task2">
             
             <h1 id="task2Heading"> {{ heading }} </h1>
@@ -84,6 +86,7 @@
 </html>
 
 <script>
+    //task 1 app
     let task1 = new Vue({
         el: '#task1',
         data: {     
@@ -92,6 +95,7 @@
         },
     });
 
+    //task 2 app
     let task2 = new Vue({
         el: '#task2',
         data: {     

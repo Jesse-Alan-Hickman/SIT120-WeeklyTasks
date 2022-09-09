@@ -62,6 +62,27 @@
                 },
             });
 
+            //task 2 component
+            var component2 = {
+                template: '<div> I own a {{ cars.year }} {{ cars.make }} {{ cars.model}}. </div>',
+                props: ['cars'],
+            };
+
+            //task 2 app
+            let task2 = new Vue({
+                el: '#task2',
+                data: {     
+                    heading: 'Week 7 Practical: Task 2',
+                    cars: {
+                        year: 1995, make: 'Nissan', model: 'Skyline R33 GTR',
+                    }, 
+                    
+                },
+                components: {
+                    component2,
+                },
+            });
+
             //task 3 component
             var component3 = {
                 template: '#component3',
@@ -88,30 +109,10 @@
                     component3,
                 },
             });
-
-            //task 2 component
-            var component2 = {
-                template: '<div> I own a {{ cars.year }} {{ cars.make }} {{ cars.model}}. </div>',
-                props: ['cars'],
-            };
-
-            //task 2 app
-            let task2 = new Vue({
-                el: '#task2',
-                data: {     
-                    heading: 'Week 7 Practical: Task 2',
-                    cars: {
-                        year: 1995, make: 'Nissan', model: 'Skyline R33 GTR',
-                    }, 
-                    
-                },
-                components: {
-                    component2,
-                },
-            });
         </script>
 
         <script src="./script.js"></script>
+        
         <script>
             let app = new Vue({
             el: '#app',

@@ -60,6 +60,7 @@
     </head>
 
     <body>
+        <!-- Task 1 div -->
         <div id="task1">
             <h1 class="taskHeading"> {{ heading }} </h1>
             <h2><u>Create Account</u></h2>
@@ -74,6 +75,7 @@
             <p>Password: {{ password }}</p>
         </div> 
 
+        <!-- Task 2 div -->
         <div id="task2">
             <h1 class="taskHeading"> {{ heading }} </h1>
 
@@ -105,6 +107,7 @@
             <h3 v-else>{{ incorrect }}</h3>
         </div>
 
+        <!-- Task 3 div -->
         <div id="task3">
             <h1 class="taskHeading"> {{ heading }} </h1>
 
@@ -133,6 +136,7 @@
 </html>
 
 <script>
+    //task 1 app
     let task1 = new Vue({
         el: '#task1',
         data: {     
@@ -142,6 +146,7 @@
         },
     });
 
+    //task 2 app
     let task2 = new Vue({
         el: '#task2',
         data: {     
@@ -159,6 +164,7 @@
         },
     });
 
+    //task 3 app
     let task3 = new Vue({
         el: '#task3',
         data: {     
